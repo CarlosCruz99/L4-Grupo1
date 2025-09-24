@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     var actividades = new Map();
-    const diasValidos = ["lunes","martes","miércoles","miercoles","jueves","viernes","sábado","sabado"]
+    const diasValidos = ["lunes", "martes", "miércoles", "miercoles", "jueves", "viernes", "sábado", "sabado"]
 
     function ingresarRecordatorio() {
         const diaSemanaIngreso = document.getElementById("diaInputIngreso").value.trim().toLowerCase();
@@ -21,12 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const diaSemanaMuestra = document.getElementById("diaInputMuestra").value.trim().toLowerCase();
         const resultadoMuestra = document.querySelector("#muestra > .resultado")
 
-        if(diasValidos.includes(diaSemanaMuestra)) {
+        if (diasValidos.includes(diaSemanaMuestra)) {
             resultadoMuestra.textContent = actividades.get(diaSemanaMuestra);
-        } 
+        }
         else {
             resultadoMuestra.textContent = "Día no reconocido. Intenta escribir: Lunes, Martes, etc.";
-        }   
+        }
     }
 
     document.getElementById("botonIngresar").onclick = ingresarRecordatorio;
